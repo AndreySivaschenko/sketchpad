@@ -1,0 +1,11 @@
+{% extends "sketch/base.html" %}
+
+{% block content %}
+   {% for note in notes %}
+      <h3>{{ note.notes_title }}</h3>
+       <h5>{{ note.notes_date }}</h5> <h6>{{ note.notes_priority }}</h6>
+       <h4>{{ note.notes_description }}</h4>
+       <a href="/edit/{{ note.id }}">Edit</a>
+       <a href="/delete/{{ note.id }}">Delete</a>
+   {% endfor %}
+{% endblock %}

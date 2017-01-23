@@ -1,0 +1,24 @@
+{% extends "sketch/base.html" %}
+
+
+{% block content %}
+    <div id="fomrsAdd">
+       <form method="POST" action="/add">{% csrf_token %}
+           <h4>Название заметки</h4>
+            <input type="text" name="notes_title" class="form-control" placeholder="Text input">
+           <h4>Текст заметки</h4>
+            <textarea class="form-control" name="notes_description" rows="3"></textarea>
+           <h4>Выберети дату</h4>
+           <input type="date"  class="form-control" name="notes_date">
+           <h4>Приоритет замeтки</h4>
+           <select class="form-control" name="notes_priority">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+
+           <button type="submit" class="btn btn-primary btnAdd">Submit</button>
+       </form>
+    </div>
+{% endblock %}

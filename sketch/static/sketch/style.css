@@ -1,0 +1,23 @@
+*{margin:0; padding: 0}
+
+h1,h2{
+    margin-top:100px;
+}
+
+#cont{
+    margin-top: 80px;
+}
+
+body{
+    background:#ececec;
+}
+
+#fomrsAdd{
+    width: 50%;
+    margin:0 auto;
+}
+
+.btnAdd{
+    margin-top: 10px;
+    float: right;
+}
