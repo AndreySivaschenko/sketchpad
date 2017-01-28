@@ -22,6 +22,7 @@
       <list>
         <option value="$MODULE_DIR$/templates" />
         <option value="$MODULE_DIR$/sketch/templates" />
+        <option value="$MODULE_DIR$/loginsys/templates" />
       </list>
     </option>
   </component>

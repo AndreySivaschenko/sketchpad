@@ -1,0 +1,148 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>SketchPad</title>
+	<link rel="stylesheet" type="text/css" href="{% static "sketch/style/bootstrap.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "sketch/style/main.css" %}">
+</head>
+<body>
+<div class="conteiner-fluid">
+<section id="head">
+	<div class="row-fluid">
+		<div class="col-sm-4 col-md-4"></div>
+		<div class="col-sm-4 col-md-4 head-logo">
+			<div class="block">
+				<h1>SketchPad</h1>
+				<h2>Text Description</h2>
+				<div class="btn-GetStart">Get Start</div>
+			</div>
+		</div>
+		<div class="col-sm-4 col-md-4 auth">
+			<ul>
+                {% if username %}
+                     <li><a href="/auth/logout/">Выйти ({{ username }})</a></li>
+                {% else %}
+				    <li><a href="/auth/login/">Login | </a></li>
+                {% endif %}
+				<li><a href="/auth/register/">Registration</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section id="descriptionProject">
+	<div class="row-fluid">
+		<div class="col-md-4 descriptionSection">
+			<img src="{% static "sketch/img/description1.png" %}">
+			<h2>Всегда с тобой</h2>
+			<h4>Теперь Вы не забудите важную информацию.
+				Она всегда будет у Вас под рукой.У кого-то день
+				рождения или у Вас какое-то мероприятие?
+				Наше приложение напомнит вам об этом,
+				не нужно держать все в своей голове!
+			</h4>
+		</div>
+		<div class="col-md-4 descriptionSection">
+			<img src="{% static "sketch/img/description2.png" %}">
+			<h2>Заметки</h2>
+			<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus vel tempora eum. Accusamus velit natus assumenda ducimus fugit laborum soluta quisquam, tempora sint fuga et explicabo minus libero, voluptatem ipsa.</h4></div>
+		<div class="col-md-4 descriptionSection">
+			<img src="{% static "sketch/img/description3.png" %}">
+			<h2>Поиск</h2>
+			<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus vel tempora eum. Accusamus velit natus assumenda ducimus fugit laborum soluta quisquam, tempora sint fuga et explicabo minus libero, voluptatem ipsa.</h4></div>
+	</div>
+</section>
+
+    <section id="download">
+        <div class="row-fluid">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 col-download">
+                <div class="wr">
+                    <h2>Начни использовать наше приложение<br/>прямо сейчас:</h2>
+                    <a href="#"><img src="{% static "sketch/img/androidIcon.png" %}"></a>
+                    <h2>или<br/>Авторизуйтесь,если вы зарегистрированны</h2>
+                    <ul>
+                        <li><a href="#">Авторизоваться</a></li>
+                        <li><a href="#">Зарегистрироваться</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </section>
+
+<section id="donat">
+	<div class="row-fluid">
+		<div class="col-md-1"></div>
+			<div class="col-md-10 donat-center">
+				<h2>Если Вам понравилось наше приложение,<br/>Вы можете пожертвовать небольшую сумму!</h2>
+				<form>
+					<div class="donat-btn"><input type="submit" value="2$"></div>
+					<div class="donat-btn"><input type="submit" value="5$"></div>
+					<div class="donat-btn"><input type="submit" value="10$"></div>
+
+					<div class="donat-input"><input type="text" placeholder="Своя сумма"></div>
+					<div class="btn-Donat">Спасибо!</div>
+				</form>
+			</div>
+		<div class="col-md-1"></div>
+	</div>
+</section>
+
+<section id="reviews">
+	<div class="row-fluid">
+		<div class="col-md-4 recall">
+			<h1>Оставить отзыв</h1>
+				<form>
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Имя</label>
+				    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите Имя...">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">E-mail</label>
+				    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Введите email">
+				  </div>
+				  <div class="form-group">
+				  <label for="textareaRecall">Отзыв</label>
+				  	 <textarea  class="form-control" id="textareaRecall" rows="5"></textarea>
+				  </div>
+
+				  <button type="submit" class="btn btn-default" id="btn-recall">Отправить</button>
+				</form>
+		</div>
+		<div class="col-md-6 rate-app">
+			<h1>Оцените наше приложение</h1>
+			<div class="rating">
+    			<span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span>
+			</div>
+			<div class="comments">
+			<h2>Последние отзывы</h2>
+				<div class="comment-note">
+					<span class="avatars">&nbsp;</span>
+					<a href="#">Name</a><br />
+					<h3>22.01.17 22:30</h3>
+					<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat delectus rerum odit sequi soluta atque ex, possimus, error quaerat. Rem, ipsum, nihil! Architecto cupiditate aperiam officiis deserunt, ipsum dicta soluta.</h5>
+				</div>
+				<div class="comment-note">
+					<span class="avatars">&nbsp;</span>
+					<a href="#">Name</a><br />
+					<h3>22.01.17 22:30</h3>
+					<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat delectus rerum odit sequi soluta atque ex, possimus, error quaerat. Rem, ipsum, nihil! Architecto cupiditate aperiam officiis deserunt, ipsum dicta soluta.</h5>
+				</div>
+			</div>
+			<div class="comment-note">
+					<span class="avatars">&nbsp;</span>
+					<a href="#">Name</a><br />
+					<h3>22.01.17 22:30</h3>
+					<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat delectus rerum odit sequi soluta atque ex, possimus, error quaerat. Rem, ipsum, nihil! Architecto cupiditate aperiam officiis deserunt, ipsum dicta soluta.</h5>
+				</div>
+			</div>
+		</div>
+    </div>
+</section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+@import url(http://allfont.ru/allfont.css?fonts=coolvetica-regular);
+@import url(http://allfont.ru/allfont.css?fonts=roboto-bold);
+@import url(http://allfont.ru/allfont.css?fonts=roboto-medium);
+@import url(http://allfont.ru/allfont.css?fonts=roboto-black);
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /*Firefox 1-3*/
+	-webkit-box-sizing:border-box; /* Safari */
+}
+
+html,body{
+	height: 100%;
+}
+
+body{
+	color:#000;
+}
+
+section#head{
+	height:100vh;
+	background:url(../img/header.png) top center no-repeat;
+	background-size: cover;
+	color:#fff;
+}
+
+.head-logo{
+	height: 100vh;
+	text-align: center;
+}
+.wr{
+ margin-top:20%;
+}
+.block{
+	margin-top: 68%;
+}
+
+.head-logo h1{
+	font-size:88px;
+	font-family: 'Coolvetica-Regular', arial;
+	line-height: 0;
+}
+
+.head-logo h2{
+	margin-top: -20px;
+	margin-bottom: 20px;
+	font-size:22px;
+	font-family: 'Roboto Bold', arial;
+	line-height: 1.2;
+}
+
+
+.btn-Donat,
+.btn-GetStart{
+	width: 158px;
+	height: 50px;
+	background: #122e53;
+	margin:0 auto;
+	margin-top: 50px;
+	border: 2px solid #628df0;
+	font-family: 'Roboto Bold', arial;
+	padding-top:6px;
+	font-size: 25px;
+	cursor: pointer;
+	border-radius: 4px 4px;
+	color:#e1e1e1;
+}
+
+.auth ul{
+	list-style:none;
+	margin:30px 0;
+	padding: 0 10px;
+	text-align: right;
+}
+
+.auth li{
+	display: inline-block;
+}
+.auth a {
+	color:#fff;
+	font-size: 18px;
+	font-family: 'Roboto Medium', arial;
+	text-decoration:none;
+	display: block;
+}
+
+section#descriptionProject{
+	background: #fff;
+	height: 70vh;
+}
+
+.descriptionSection{
+	color:#4b5f83;
+	padding-top: 40px;
+	padding-left: 40px;
+	padding-right: 45px;
+	text-align: center;
+	height: 70vh;
+}
+
+.descriptionSection h2{
+	font-size: 22px;
+	font-family: 'Roboto Black', arial;
+	margin-top: 2px;
+	margin-bottom:30px;
+}
+
+
+.descriptionSection h4{
+	color: #425371;
+	font-size: 14px;
+	font-family: 'Roboto Black', arial;
+}
+
+section#download{
+	height: 100vh;
+	color: #fff;
+	background: url(../img/downloadBg.png) right center no-repeat;
+	background-size: cover;
+	text-align: center;
+}
+
+.col-download{height: 100vh}
+.col-download h2{
+	font-size: 22px;
+	font-family: 'Roboto Bold', arial;
+	margin:20px 0;
+}
+
+.col-download ul{
+	list-style: none;
+	margin:0;
+	margin-top: 90px;
+	padding: 0;
+}
+
+.col-download a{
+	color: #fff;
+	font-size: 22px;
+	font-family: 'Roboto Bold', arial;
+}
+
+section#donat{
+	height: 70vh;
+	background: #e1e1e1;
+	text-align: center;
+}
+
+.donat-btn{
+	display: inline-block;
+}
+
+.donat-btn input[type="submit"]{
+	width: 65px;
+	height: 65px;
+	margin-top: 10px;
+	margin-right: 30px;
+	background: #bcbcbc;
+	border-radius: 10px 10px;
+	box-shadow: 0 3px 7px rgba(0,0,0,0.19);
+	color: #fff;
+	text-align: center;
+	font-size: 30px;
+	border: none;
+	outline: none;
+}
+
+
+
+.donat-center h2{
+	margin-top: 50px;
+	margin-bottom: 100px;
+	color: #1c2b4b;
+	font-size: 24px;
+	font-family: 'Roboto Bold', arial;
+}
+
+.donat-center input[type="text"]{
+	width: 400px;
+	height: 65px;
+	border: none;
+	outline: none;
+	border-radius: 10px 10px;
+	background: #fff;
+	position: relative;
+	top:-3px;
+	left: 0;
+	padding-left: 15px;
+	font-family: 'Roboto Bold', arial;
+	font-size: 20px;
+	color: #898989;
+}
+
+.donat-input{display: inline-table;}
+
+section#reviews{
+	height: 100vh;
+	background: #1c2b4b;
+}
+
+
+.recall{
+	width: 50vh;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.rate-app h1,
+.recall h1{
+	color: #d3d3d3;
+	font-weight: normal;
+	font-family: 'Roboto Black', arial;
+}
+
+
+.rate-app h1{
+	margin-left: 200px;
+}
+
+.form-group label{
+	color: #d3d3d3;
+	font-family: "Roboto Medium",arial;
+}
+
+.recall textarea{
+	resize: none;
+}
+
+#btn-recall{
+	width: 15vh;
+	height: 40px;
+	background: #24365e;
+	border: 1px solid #1d2c4d;
+	font-family: 'Roboto Bold', arial;
+	padding-top:6px;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 8px 8px;
+	color:#d3d3d3;
+	float: right;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.rate-app{
+	margin-top: 10px;
+	margin-left: 150px;
+}
+
+.rating{
+	font-size: 35px;
+	color: #fff;
+  	unicode-bidi: bidi-override;
+ 	direction: rtl;
+}
+
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  top:0;
+  left:-175px;
+}
+
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color:yellow;
+}
+
+
+.comments h2{
+	margin-top: 15px;
+	margin-bottom: 10px;
+	color: #d3d3d3;
+	font-weight: normal;
+	font-family: 'Roboto Black', arial;
+}
+.comment-note{
+	background: #fff;
+	border-radius: 8px 8px;
+	margin-top: 10px;
+}
+
+.avatars{
+	width: 45px;
+	height: 45px;
+	background: #ccc;
+	float: left;
+	margin: 10px 10px;
+}
+.comment-note a{
+	display: block;
+	padding-top: 10px;
+}
+
+.comment-note h3{
+	width: 100px;
+	position: relative;
+	top:-30px;
+	left:66px;
+	font-weight: normal;
+	font-size: 12px;
+	padding: 0;
+}
+
+
+.comment-note h5{
+	width: 90%;
+	display: block;
+	position: relative;
+	top:-15px;
+	left: 65px;
+}
+

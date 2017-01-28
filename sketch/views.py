@@ -4,16 +4,21 @@ from .forms import AddForm
 # Create your views here.
 from sketch.models import Note
 from sketch.forms import AddForm
-
-
+from django.contrib import auth
 
 def note(request):
     notes = Note.objects.all()
+    usernames = auth.get_user(request).username
     context = {
-        "notes": notes
+        "notes": notes,
+        "username": usernames
     }
     return render(request, "sketch/notes.html", context)
 
+
+
+def main(request):
+    return render(request, "../templates/main.html")
 
 
 def add_note(request):
