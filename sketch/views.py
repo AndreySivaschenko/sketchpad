@@ -1,24 +1,37 @@
+import datetime
+
 from django.http import HttpResponse
-from django.shortcuts import render,get_object_or_404,redirect
-from .forms import AddForm
+from django.shortcuts import render,redirect, render_to_response
+
 # Create your views here.
+from django.template import loader
+
 from sketch.models import Note
-from sketch.forms import AddForm
 from django.contrib import auth
 
+
+
+def dateNav(request):
+
+    return render(request,"sketch/dateNav.html")
+
 def note(request):
-    notes = Note.objects.all()
+    arrayWeekday = []
+    today = datetime.date.today()
+    sunday = today - datetime.timedelta(today.weekday())
+    for i in range(7):
+        tmp_date = sunday + datetime.timedelta(i)
+        arrayWeekday.append(tmp_date.strftime('%A %x'))
+
+
     usernames = auth.get_user(request).username
+    notes = Note.objects.filter(note_user_id= request.user, notes_date=datetime.date.today())
     context = {
         "notes": notes,
-        "username": usernames
+        "username": usernames,
+        "date":arrayWeekday
     }
     return render(request, "sketch/notes.html", context)
-
-
-
-def main(request):
-    return render(request, "../templates/main.html")
 
 
 def add_note(request):
@@ -26,9 +39,9 @@ def add_note(request):
 
 def add(request):
     print(request.POST)
-    note = Note(notes_title = request.POST['notes_title'],notes_description = request.POST['notes_description'],notes_date = request.POST['notes_date'],notes_priority = request.POST['notes_priority'])
+    note = Note(notes_title = request.POST['notes_title'],notes_description = request.POST['notes_description'],notes_time = request.POST['notes_time'], notes_date = request.POST['notes_date'],notes_priority = request.POST['notes_priority'])
     note.save()
-    return redirect("/")
+    return redirect("/user/note")
 
 
 def edit(request, id):
@@ -49,3 +62,4 @@ def destroy(request, id):
     note = Note.objects.get(id = id)
     note.delete()
     return redirect('/')
+

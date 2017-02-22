@@ -1,4 +1,7 @@
-from django.forms import forms
+from django.conf import settings
+from django.forms import forms, DateField, ModelForm
+
+
 from .models import Note
 
 
@@ -11,3 +14,9 @@ class AddForm(forms.Form):
                 'notes_date',
                 'notes_priority'
             ]
+
+
+class DateFormat(ModelForm):
+    notes_date = DateField(input_formats=settings.DATE_INPUT_FORMATS)
+    class Meta:
+       model = Note

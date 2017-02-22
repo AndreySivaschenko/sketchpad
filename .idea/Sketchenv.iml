@@ -20,9 +20,9 @@
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/templates" />
         <option value="$MODULE_DIR$/sketch/templates" />
         <option value="$MODULE_DIR$/loginsys/templates" />
+        <option value="$MODULE_DIR$/landing/templates" />
       </list>
     </option>
   </component>

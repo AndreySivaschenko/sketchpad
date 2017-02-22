@@ -286,34 +286,24 @@ section#reviews{
 	margin-top: 10px;
 }
 
-.avatars{
-	width: 45px;
-	height: 45px;
-	background: #ccc;
-	float: left;
-	margin: 10px 10px;
-}
-.comment-note a{
-	display: block;
-	padding-top: 10px;
+.comment-note h4{
+	padding-top: 15px;
+	margin-left: 15px;
 }
 
 .comment-note h3{
 	width: 100px;
-	position: relative;
-	top:-30px;
-	left:66px;
 	font-weight: normal;
 	font-size: 12px;
 	padding: 0;
+	margin-left: 15px;
 }
-
 
 .comment-note h5{
 	width: 90%;
 	display: block;
-	position: relative;
-	top:-15px;
-	left: 65px;
+	margin-left: 15px;
+	padding:10px 5px;
 }
 
+/*----Login----*/
