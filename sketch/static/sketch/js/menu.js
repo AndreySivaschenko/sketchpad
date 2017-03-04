@@ -40,7 +40,69 @@ function priority() {
 
 }
 
+function hideDateNav() {
+	var date = document.getElementsByClassName("date-row");
+	for(var i = 0; i < date.length; i++){
+		if(i == 5){
+			date[i].style.display = "none";
+		}else if(i == 6){
+			date[i].style.display = "none";
+		}
+	}
+}
+
+function sellectArrow() {
+	var arrowPrew = document.getElementById("ar-prev");
+	var arrowNext = document.getElementById('ar-next');
+	var date = document.getElementsByClassName("date-row");
+	var note = document.getElementsByClassName('note-row');
+	arrowPrew.style.display = 'none';
+
+	arrowNext.onclick = function () {
+		for(var i = 0; i < date.length; i++){
+			if(i == 0){
+				date[i].style.display = "none";
+			} else if(i == 1){
+				date[i].style.display = "none";
+
+			}
+
+			if(i == 5 && date[i].style.display != "block"){
+				date[i].style.display = "block";
+			}else if(i == 6 && date[i].style.display != "block" ){
+				date[i].style.display = "block";
+				arrowNext.style.display = 'none';
+				arrowPrew.style.display = "block";
+
+			}
+		}
+    };
+	arrowPrew.onclick = function () {
+		for(var i = 0; i < date.length; i++){
+			if(i == 0 ){
+				date[i].style.display = "block";
+			} else if(i == 1){
+				date[i].style.display = "block";
+			}
+
+			if(i == 5 && date[i].style.display == "block"){
+				date[i].style.display = "none";
+				note[i].style.display = "none";
+			}else if(i == 6 && date[i].style.display == "block"){
+				date[i].style.display = "none";
+				note[i].style.display = "none";
+				arrowNext.style.display = 'block';
+				arrowPrew.style.display = "none";
+			}
+		}
+    };
+}
+
+
+
 window.onload = function(){
 	openMenu();
 	priority();
+	hideDateNav();
+	sellectArrow();
 };

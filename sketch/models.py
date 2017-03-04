@@ -7,7 +7,7 @@ from django.conf import settings
 class Note(models.Model):
     class Meta:
         db_table = "Note"
-        ordering = ('notes_date',)
+        ordering = ('notes_date', )
 
     note_user = models.ForeignKey(settings.AUTH_USER_MODEL,default=1)
     notes_title = models.CharField(max_length = 50)

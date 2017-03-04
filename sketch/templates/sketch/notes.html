@@ -5,22 +5,22 @@
 
 {% block content %}
 	<div class="col-md-11" id="date">
-					<div class="row">
-                    	<a href="#"><img src="{% static "sketch/img/arrow-prev.png" %}" class="arrow-prev" alt="arrow-prev"></a>
+					<div class="row-fluid">
                         {% for note in date %}
                          <div class="col-md-5 date-row">
                              <h4>{{ date|index:forloop.counter0 }}</h4>
                          </div>
                      {% endfor %}
-
-                        <a href="#"><img src="{% static "sketch/img/arrow-next.png" %}" class="arrow-next" alt="arrow-next"></a>
+                        <a href="#" id="ar-prev"><img src="{% static "sketch/img/arrow-prev.png" %}" class="arrow-prev" alt="arrow-prev"></a>
+                        <a href="#" id="ar-next"><img src="{% static "sketch/img/arrow-next.png" %}" class="arrow-next" alt="arrow-next"></a>
 					</div>
 				</div>
 					<div class="col-md-11" id="body">
 						<div class="row">
-                           <div class="col-md-5 note-row ">
-                           {% for note in notes %}
-                                <div class="note" id="notes">
+
+                            <div class="col-md-5 note-row">
+                            {% for note in notes%}
+                             <div class="note" id="notes">
                                     <div class="n-title clearfix">
                                         <h4>Время</h4>
                                         <h5>{{ note.notes_time|date:"H:i"  }}</h5>
@@ -29,12 +29,11 @@
                                         <input type="text" id="prior" value="{{ note.notes_priority }}" />
                                         <h4>Описание</h4>
                                         <p>{{ note.notes_description }}</p>
-                                        <h5>Выполнено </h5>
+                                        <h5>Выполнено</h5>
                                     </div>
                                 </div>
                             {% endfor %}
                             </div>
-
 						</div>
 					</div>
 {% endblock %}

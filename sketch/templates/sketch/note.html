@@ -1,0 +1,14 @@
+          <div class="col-md-5 note-row ">
+                             <div class="note" id="notes">
+                                    <div class="n-title clearfix">
+                                        <h4>Время</h4>
+                                        <h5>{{ note.notes_time|date:"H:i"  }}</h5>
+                                    </div>
+                                    <div class="n-body">
+                                        <input type="text" id="prior" value="{{ note.notes_priority }}" />
+                                        <h4>Описание</h4>
+                                        <p>{{ note.notes_description }}</p>
+                                        <h5>Выполнено </h5>
+                                    </div>
+                                </div>
+                            </div>
