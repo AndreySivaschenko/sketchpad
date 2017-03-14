@@ -53,56 +53,101 @@ function hideDateNav() {
 
 function sellectArrow() {
 	var arrowPrew = document.getElementById("ar-prev");
-	var arrowNext = document.getElementById('ar-next');
-	var date = document.getElementsByClassName("date-row");
-	var note = document.getElementsByClassName('note-row');
+	var	arrowNext = document.getElementById("ar-next");
+	var	date = document.getElementsByClassName("date-row");
+	var note_1 = document.getElementById('notes_1');
+	var note_2 = document.getElementById('notes_2');
+	var note_4 = document.getElementById('notes_4');
+	var note_5 = document.getElementById('notes_5');
+	var note_6 = document.getElementById('notes_6');
+	var note_7 = document.getElementById('notes_7');
+
+
+
+
 	arrowPrew.style.display = 'none';
 
 	arrowNext.onclick = function () {
 		for(var i = 0; i < date.length; i++){
 			if(i == 0){
 				date[i].style.display = "none";
+				note_1.style.display = "none";
 			} else if(i == 1){
 				date[i].style.display = "none";
-
+				note_2.style.display = "none";
 			}
 
-			if(i == 5 && date[i].style.display != "block"){
+			if(i == 5){
 				date[i].style.display = "block";
-			}else if(i == 6 && date[i].style.display != "block" ){
+				note_6.style.display = "block";
+			}else if(i == 6 ){
 				date[i].style.display = "block";
+				note_7.style.display = "block";
+
 				arrowNext.style.display = 'none';
 				arrowPrew.style.display = "block";
 
 			}
 		}
     };
+
 	arrowPrew.onclick = function () {
 		for(var i = 0; i < date.length; i++){
 			if(i == 0 ){
 				date[i].style.display = "block";
+				note_1.style.display = "block";
 			} else if(i == 1){
 				date[i].style.display = "block";
+				note_2.style.display = "block";
 			}
 
-			if(i == 5 && date[i].style.display == "block"){
+			if(i == 5){
 				date[i].style.display = "none";
-				note[i].style.display = "none";
-			}else if(i == 6 && date[i].style.display == "block"){
+				note_6.style.display = "none";
+			}else if(i == 6){
 				date[i].style.display = "none";
-				note[i].style.display = "none";
-				arrowNext.style.display = 'block';
+				note_7.style.display = "none";
+
 				arrowPrew.style.display = "none";
+				arrowNext.style.display = 'block';
+
 			}
 		}
     };
 }
 
 
+function optionNote(){
+	var btnEdit = document.getElementById('m-edit'),
+		btnDelete = document.getElementById('m-delete'),
+		done = document.getElementsByClassName("done"),
+		note = document.querySelectorAll(".note"),
+		edit = document.getElementsByClassName("edit"),
+		deletes = document.getElementsByClassName("delete");
+
+	btnEdit.onclick = function(){
+		for(var i = 0; i < note.length; i++){
+				done[i].style.display = 'none';
+				deletes[i].style.display = 'none';
+    	        edit[i].style.display = "block";
+			}
+		};
+
+		btnDelete.onclick = function(){
+		for(var i = 0; i < note.length; i++){
+				done[i].style.display = 'none';
+				edit[i].style.display = 'none';
+				deletes[i].style.display = "block";
+			}
+		};
+
+}
 
 window.onload = function(){
 	openMenu();
 	priority();
 	hideDateNav();
 	sellectArrow();
+	optionNote();
+
 };

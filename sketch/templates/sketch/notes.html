@@ -17,10 +17,9 @@
 				</div>
 					<div class="col-md-11" id="body">
 						<div class="row">
-
-                            <div class="col-md-5 note-row">
-                            {% for note in notes%}
-                             <div class="note" id="notes">
+                            <div class="col-md-5 note-row" id="notes_1">
+                            {% for note in notes_1%}
+                             <div class="note">
                                     <div class="n-title clearfix">
                                         <h4>Время</h4>
                                         <h5>{{ note.notes_time|date:"H:i"  }}</h5>
@@ -29,11 +28,197 @@
                                         <input type="text" id="prior" value="{{ note.notes_priority }}" />
                                         <h4>Описание</h4>
                                         <p>{{ note.notes_description }}</p>
-                                        <h5>Выполнено</h5>
+                                         <div class = "footer-note done">
+                                                 <h5>Выполнено</h5><input type="checkbox">
+                                        </div>
+
+                                        <div class = "footer-note edit">
+                                                <h5>Редакрировать</h5>
+                                                <a href="/user/edit/{{ note.id }}"><img src="{% static "/sketch/img/edit.png" %}"></a>
+                                        </div>
+
+                                        <div class = "footer-note delete">
+                                                <h5>Удалить</h5>
+                                                <a href="/user/delete/{{ note.id }}"><img src="{% static "/sketch/img/delete.png" %}"></a>
+                                        </div>
                                     </div>
                                 </div>
                             {% endfor %}
                             </div>
-						</div>
+
+							<div class="col-md-5 note-row" id="notes_2">
+                            {% for note in notes_2%}
+                             <div class="note">
+                                    <div class="n-title clearfix">
+                                        <h4>Время</h4>
+                                        <h5>{{ note.notes_time|date:"H:i"  }}</h5>
+                                    </div>
+                                    <div class="n-body">
+                                        <input type="text" id="prior" value="{{ note.notes_priority }}" />
+                                        <h4>Описание</h4>
+                                        <p>{{ note.notes_description }}</p>
+                                         <div class = "footer-note done">
+                                                 <h5>Выполнено</h5><input type="checkbox">
+                                        </div>
+
+                                        <div class = "footer-note edit">
+                                                <h5>Редакрировать</h5>
+                                                <a href="/user/edit/{{ note.id }}"><img src="{% static "/sketch/img/edit.png" %}"></a>
+                                        </div>
+
+                                        <div class = "footer-note delete">
+                                                <h5>Удалить</h5>
+                                                <a href="/user/delete/{{ note.id }}"><img src="{% static "/sketch/img/delete.png" %}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+
+                            <div class="col-md-5 note-row" id="notes_3">
+                            {% for note in notes_3%}
+                             <div class="note">
+                                    <div class="n-title clearfix">
+                                        <h4>Время</h4>
+                                        <h5>{{ note.notes_time|date:"H:i"  }}</h5>
+                                    </div>
+                                    <div class="n-body">
+                                        <input type="text" id="prior" value="{{ note.notes_priority }}" />
+                                        <h4>Описание</h4>
+                                        <p>{{ note.notes_description }}</p>
+                                         <div class = "footer-note done">
+                                                 <h5>Выполнено</h5><input type="checkbox">
+                                        </div>
+
+                                        <div class = "footer-note edit">
+                                                <h5>Редакрировать</h5>
+                                                <a href="/user/edit/{{ note.id }}"><img src="{% static "/sketch/img/edit.png" %}"></a>
+                                        </div>
+
+                                        <div class = "footer-note delete">
+                                                <h5>Удалить</h5>
+                                                <a href="/user/delete/{{ note.id }}"><img src="{% static "/sketch/img/delete.png" %}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+
+							<div class="col-md-5 note-row" id="notes_4">
+                            {% for note in notes_4%}
+                             <div class="note">
+                                    <div class="n-title clearfix">
+                                        <h4>Время</h4>
+                                        <h5>{{ note.notes_time|date:"H:i"  }}</h5>
+                                    </div>
+                                    <div class="n-body">
+                                        <input type="text" id="prior" value="{{ note.notes_priority }}" />
+                                        <h4>Описание</h4>
+                                        <p>{{ note.notes_description }}</p>
+                                         <div class = "footer-note done">
+                                                 <h5>Выполнено</h5><input type="checkbox">
+                                        </div>
+
+                                        <div class = "footer-note edit">
+                                                <h5>Редакрировать</h5>
+                                                <a href="/user/edit/{{ note.id }}"><img src="{% static "/sketch/img/edit.png" %}"></a>
+                                        </div>
+
+                                        <div class = "footer-note delete">
+                                                <h5>Удалить</h5>
+                                                <a href="/user/delete/{{ note.id }}"><img src="{% static "/sketch/img/delete.png" %}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+
+                            <div class="col-md-5 note-row" id="notes_5">
+                            {% for note in notes_5%}
+                             <div class="note">
+                                    <div class="n-title clearfix">
+                                        <h4>Время</h4>
+                                        <h5>{{ note.notes_time|date:"H:i"  }}</h5>
+                                    </div>
+                                    <div class="n-body">
+                                        <input type="text" id="prior" value="{{ note.notes_priority }}" />
+                                        <h4>Описание</h4>
+                                        <p>{{ note.notes_description }}</p>
+                                         <div class = "footer-note done">
+                                                 <h5>Выполнено</h5><input type="checkbox">
+                                        </div>
+
+                                        <div class = "footer-note edit">
+                                                <h5>Редакрировать</h5>
+                                                <a href="/user/edit/{{ note.id }}"><img src="{% static "/sketch/img/edit.png" %}"></a>
+                                        </div>
+
+                                        <div class = "footer-note delete">
+                                                <h5>Удалить</h5>
+                                                <a href="/user/delete/{{ note.id }}"><img src="{% static "/sketch/img/delete.png" %}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+
+							<div class="col-md-5 note-row" id="notes_6">
+                            {% for note in notes_6%}
+                             <div class="note">
+                                    <div class="n-title clearfix">
+                                        <h4>Время</h4>
+                                        <h5>{{ note.notes_time|date:"H:i"  }}</h5>
+                                    </div>
+                                    <div class="n-body">
+                                        <input type="text" id="prior" value="{{ note.notes_priority }}" />
+                                        <h4>Описание</h4>
+                                        <p>{{ note.notes_description }}</p>
+                                         <div class = "footer-note done">
+                                                 <h5>Выполнено</h5><input type="checkbox">
+                                        </div>
+
+                                        <div class = "footer-note edit">
+                                                <h5>Редакрировать</h5>
+                                                <a href="/user/edit/{{ note.id }}"><img src="{% static "/sketch/img/edit.png" %}"></a>
+                                        </div>
+
+                                        <div class = "footer-note delete">
+                                                <h5>Удалить</h5>
+                                                <a href="/user/delete/{{ note.id }}"><img src="{% static "/sketch/img/delete.png" %}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+
+                            <div class="col-md-5 note-row" id="notes_7">
+                            {% for note in notes_7%}
+                             <div class="note">
+                                    <div class="n-title clearfix">
+                                        <h4>Время</h4>
+                                        <h5>{{ note.notes_time|date:"H:i"  }}</h5>
+                                    </div>
+                                    <div class="n-body">
+                                        <input type="text" id="prior" value="{{ note.notes_priority }}" />
+                                        <h4>Описание</h4>
+                                        <p>{{ note.notes_description }}</p>
+                                         <div class = "footer-note done">
+                                                 <h5>Выполнено</h5><input type="checkbox">
+                                        </div>
+
+                                        <div class = "footer-note edit">
+                                                <h5>Редакрировать</h5>
+                                                <a href="/user/edit/{{ note.id }}"><img src="{% static "/sketch/img/edit.png" %}"></a>
+                                        </div>
+
+                                        <div class = "footer-note delete">
+                                                <h5>Удалить</h5>
+                                                <a href="/user/delete/{{ note.id }}"><img src="{% static "/sketch/img/delete.png" %}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </div>
 					</div>
 {% endblock %}
