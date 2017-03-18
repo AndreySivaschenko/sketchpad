@@ -1,6 +1,7 @@
 @import url(http://allfont.ru/allfont.css?fonts=coolvetica-regular);
 @import url(http://allfont.ru/allfont.css?fonts=roboto-light);
 @import url(http://allfont.ru/allfont.css?fonts=roboto-bold);
+@import url(http://allfont.ru/allfont.css?fonts=roboto-regular);
 
 *{margin: 0;padding: 0;
 	 -webkit-box-sizing:border-box;
@@ -251,6 +252,39 @@ body{
 	margin-right: 5px;
 }
 
+.footer-note input[type="checkbox"]{
+	float: right;
+	margin-top:5px;
+	border: 1px solid #0f0f0f;
+	display: none;
+}
+
+.footer-note input[type="checkbox"]:checked + .check{
+	width: 16px;
+	height: 16px;
+	display: block;
+	background: url("../img/check.png")no-repeat;
+	background-position: 0 -18px;
+	float: right;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+.checkbox{
+	cursor: pointer;
+}
+
+.check{
+	width: 16px;
+	height: 16px;
+	display: block;
+	background: url("../img/check.png")no-repeat;
+	background-position: 0 0;
+	float: right;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
 #prior{
 	display: none;
  }
@@ -410,7 +444,7 @@ body{
 	background-position:0 -169px;
 }
 #sort-btn:hover,
-#delete-btn:hover{
+#m-delete:hover{
 	color: #f06292;
 }
 
@@ -443,3 +477,28 @@ body{
 	border: none;
 }
 
+.addForm {
+	margin-top: 10px;
+
+}
+.addForm h2{
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	font-family: 'Roboto Regular', arial;
+	font-weight: normal;
+}
+
+.addForm h4{
+	font-weight: normal;
+	margin-bottom: 5px;
+	font-family: 'Roboto Bold', aria
+}
+.centerButton{
+	text-align: right;
+	margin: 0 auto;
+}
+
+.note_desc{
+	resize: none;
+}

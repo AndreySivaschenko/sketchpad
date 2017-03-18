@@ -2,16 +2,32 @@
 
 
 {% block content %}
-    <div id="fomrsAdd">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+       <div id="fomrsAdd">
        <form method="POST" action="/user/update/{{ note.id }}">{% csrf_token %}
-         <h4>Название заметки</h4>
-            <input type="text" name="notes_title" class="form-control" placeholder="Text input">
+       <div class="addForm">
+            <h2>Редактирование {{ note.notes_title }}</h2>
+           <div class="form-group">
+           <h4>Название заметки</h4>
+            <input type="text" name="notes_title" class="form-control"  value="{{ note.notes_title }}" placeholder="{{ note.notes_title }}" required />
+           </div>
+
+           <div class="form-group">
            <h4>Текст заметки</h4>
-            <textarea class="form-control" name="notes_description" rows="3"></textarea>
+            <textarea class="form-control note_desc" name="notes_description" rows="3" required>{{ note.notes_description }}</textarea>
+           </div>
+            <div class="form-group">
            <h4>Укажите время</h4>
-           <input type="text" class="form-control" name="notes_time"/>
+           <input type="text" class="form-control" name="notes_time" value="{{ note.notes_time }}" required/>
+            </div>
+            <div class="form-group">
            <h4>Выберети дату</h4>
-            <input type="text" class="form-control" name="notes_date" />
+            <input type="text" class="form-control" name="notes_date" value="{{ note.notes_date }}" required/>
+            </div>
+            <div class="form-group">
            <h4>Приоритет замeтки</h4>
             <select class="form-control" name="notes_priority" id="prioritySelect">
               <option value="0">Обычный</option>
@@ -19,7 +35,17 @@
               <option value="2">Повышеный</option>
               <option value="3">Высокий</option>
             </select>
-           <button type="submit" class="btn btn-primary btnAdd">Update</button>
+            </div>
+            <div class="centerButton">
+                <button type="submit" class="btn btn-primary">Обновить</button>
+                <a href="/user/note"><input type="button" class="btn btn-default" value="Отмена" /></a>
+            </div>
+        </div>
        </form>
+       </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
     </div>
+
 {% endblock %}
