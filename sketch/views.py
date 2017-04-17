@@ -1,18 +1,18 @@
 import datetime
 
-from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.models import User
+
+
 from django.shortcuts import render,redirect, render_to_response
+from django.template import RequestContext
 
-# Create your views here.
-from django.template import loader
-from django.views import generic
-from django.views.generic import CreateView
-
-from sketch.forms import AnalysisForm
+from sketch.forms import EditProfileForm, EditProfileMoreForm
 from sketch.models import Note
 from django.contrib import auth
 
-
+@login_required
 def note(request):
     arrayWeekday = []
     dayWeekday = []
@@ -79,3 +79,22 @@ def destroy(request, id):
     note.delete()
     return redirect('/user/note')
 
+@login_required
+def view_profile(request):
+    return render(request,'profile/base.html')
+
+
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        profileUserEdit = EditProfileForm(request.POST, instance = request.user)
+        profileMoreEdit = EditProfileMoreForm(request.POST,request.FILES, instance=request.user.profile)
+        if profileUserEdit.is_valid() and profileMoreEdit.is_valid():
+            profileUserEdit.save()
+            profileMoreEdit.save()
+            return redirect('/user/profile')
+    else:
+        profileUserEdit = EditProfileForm(instance=request.user)
+        profileMoreEdit = EditProfileMoreForm(instance=request.user.profile)
+        context = {'profileEdit':profileUserEdit,'profileMore':profileMoreEdit}
+        return render(request, 'profile/profile_edit.html', context)

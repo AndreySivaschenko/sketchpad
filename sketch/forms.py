@@ -1,7 +1,9 @@
 from django.conf import settings
 from django import forms
+from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.models import User
 
-
+from userprofile.models import UserProfile
 from .models import Note
 
 
@@ -15,5 +17,22 @@ class AnalysisForm(forms.ModelForm):
     class Meta:
         model = Note
         fields = ['notes_title','notes_description','notes_time','notes_date','notes_priority']
+
+
+
+class EditProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'email',
+            'first_name',
+            'last_name',
+        ]
+
+class EditProfileMoreForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['dateBirth','phone','avatar']
+
 
 

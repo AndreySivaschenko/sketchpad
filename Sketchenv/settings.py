@@ -28,18 +28,25 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'django.contrib.staticfiles',
+
+
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'crispy_forms',
+    'landing',
     'sketch',
     'loginsys',
-    'landing',
+    'registration',
+    'userprofile',
+    'django.contrib.admin',
 ]
 
 MIDDLEWARE = [
@@ -104,6 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
@@ -111,14 +121,12 @@ LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'Europe/Kiev'
 
-USE_I18N = False
+USE_I18N = True
 
 USE_L10N = False
 
 USE_TZ = True
 
-DATE_FORMAT = 'd.m.Y'
-DATE_INPUT_FORMATS = ('%d.%m.%Y')
 
 FORMAT_MODULE_PATH = [
     'sketch/formats',
@@ -126,9 +134,35 @@ FORMAT_MODULE_PATH = [
 ]
 
 
+AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'Sketchenv/media')
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+
+# Registration Settings
+
+REGISTRATION_OPEN = True        # Если равно True, то пользователи могут регистрироваться
+ACCOUNT_ACTIVATION_DAYS = 7     # время в течении которого можно активировать аккаунт;
+                                # в качестве примера выбрано 7 дней или одна неделя, но Вы можете указать другое значение.
+REGISTRATION_AUTO_LOGIN = True  # Если равно  True, то пользователь будет автоматически входить в систему.
+LOGIN_REDIRECT_URL = '/user/note'  # Страница, на которую будут попадать пользователи, после успешного входа в систему.
+LOGIN_URL = '/accounts/login/'  # Страница, на которую перенаправляются пользователи, если они не вошли в систему и
+                                # пытаются получить доступ к страницам, которые требуют аутентификации
+SITE_ID = 1
+AUTH_USER_EMAIL_UNIQUE = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+DEFAULT_FROM_EMAIL = 'info@google.ru'

@@ -1,0 +1,52 @@
+{% load i18n %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>SketchPad-login</title>
+      <link rel="stylesheet" type="text/css" href="{% static "landing/style/bootstrap.min.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'landing/style/main.css' %}">
+</head>
+<body id="authBody">
+<div class="container-fluid">
+<div class="row">
+<div class="wp">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="logo">
+            <img src="{% static 'landing/img/logo.png' %}" />
+            <h2>SketchPad</h2>
+        </div>
+        <div class="form-auth" id="content">
+            {% block content %}{% endblock %}
+        </div>
+</div>
+
+<div class="col-md-4">
+    <div class="header-logo">
+        {% block header %}
+        {% if user.is_authenticated %}
+            <h4>{% trans "Logged in" %}: {{ user.username }}</h4>
+            (<a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a> |
+            <a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a>)
+        {% else %}
+           <a  class="link_login" href="{% url 'auth_login' %}">{% trans "Log in" %}</a>
+        {% endif %}
+        {% endblock %}
+    </div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</body>
+</html>

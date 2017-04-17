@@ -1,0 +1,23 @@
+{% extends "profile/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+             <div class="col-md-4">
+                 <div id="profileEdit">
+                         <h2>Редактирование профиля</h2>
+                      <form method="POST" action="/user/profile/edit/" enctype="multipart/form-data">
+                          {% csrf_token %}
+                        {{ profileEdit| crispy}}
+                        {{ profileMore | crispy}}
+                      <button type="submit" class="profileBtn">Сохранить</button>
+                      </form>
+                 </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+{% endblock %}

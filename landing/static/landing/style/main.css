@@ -68,9 +68,21 @@ section#head{
 	color:#e1e1e1;
 }
 
+.auth h3{
+	font-size: 16px;
+	font-weight: normal;
+	font-family: 'Roboto Medium', arial;
+	margin-bottom: 0;
+}
+
+.auth h3:hover{
+	text-decoration: underline;
+}
+
+
 .auth ul{
 	list-style:none;
-	margin:30px 0;
+	margin:40px 0;
 	padding: 0 10px;
 	text-align: right;
 }
@@ -80,11 +92,30 @@ section#head{
 }
 .auth a {
 	color:#fff;
-	font-size: 18px;
+	font-size: 14px;
 	font-family: 'Roboto Medium', arial;
 	text-decoration:none;
 	display: block;
 }
+
+.avatar{
+	width: 15%;
+	height: 60px;
+	border-radius: 50% 50%;
+	border:none;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+	object-fit: cover;
+	float: right;
+	margin-top: -7px;
+	margin-left: 10px;
+	transition: 0.3s;
+}
+
+.avatar:hover{
+	transition: 0.9s;
+	opacity: 0.6;
+}
+
 
 section#descriptionProject{
 	background: #fff;
@@ -307,3 +338,138 @@ section#reviews{
 }
 
 /*----Login----*/
+
+
+
+#authBody{
+    background:url(../img/loginbg2.png) top center no-repeat;
+	background-size: cover;
+}
+
+.form-auth{
+    width: 60%;
+    height: 100%;
+    z-index: 9999;
+    margin: 0 auto;
+}
+
+.control-label{
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    margin-bottom: 5px;
+	font-family: 'Roboto Black', arial;
+}
+
+.login_btn{
+    text-align: center;
+}
+
+
+
+.logo img{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.logo h2{
+    font-weight: normal;
+    font-size: 55px;
+    text-align: center;
+    font-family: 'Coolvetica-Regular', arial;
+    color:#fcedf8;
+    margin-top: -10px;
+}
+
+.form-auth input[type="submit"],
+#auth-btn{
+    width: 125px;
+	height: 40px;
+	background: #122e53;
+	margin:0 auto;
+	border: 2px solid #628df0;
+	font-family: 'Roboto Bold', arial;
+	padding-top:7px;
+	font-size: 18px;
+	cursor: pointer;
+	border-radius: 4px 4px;
+	color:#e1e1e1;
+}
+
+.form-auth input[type="submit"]{
+	padding-top:2px;
+	display: block;
+}
+
+
+.header-logo{
+	color: #fff;
+	float: right;
+	padding-top: 15px;
+	margin-right: 15px;
+}
+
+.header-logo a,
+.header-logo h4{
+	color:#fff;
+	font-size: 16px;
+	font-family: 'Roboto Medium', arial;
+	text-decoration:none;
+	font-weight: normal;
+	display: inline-block;
+}
+
+.header-logo a:hover{
+	text-decoration:underline;
+}
+.alert-danger ul{
+	list-style: none;
+}
+
+.alert-danger li{
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+}
+
+.controls li{
+	color:#d9edf7;
+	font-size: 12px;
+}
+
+
+.Help_user{
+	margin-bottom: 15px;
+}
+
+.Help_user a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.Help_user a:hover{
+	color:#d9edf7;
+	text-decoration: underline;
+}
+
+.Help_user p{
+	text-align: center;
+	color: #fff;
+}
+
+.text_registration p{
+	font-size: 16px;
+	text-align: center;
+	color:#fff;
+	font-family: 'Roboto Medium', arial;
+}
+
+.help-block{;
+	color:#d9edf7;
+	margin-bottom: 10px;
+}
+
+.registrationForm{
+	padding-bottom: 30px;
+}

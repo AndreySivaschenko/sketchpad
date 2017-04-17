@@ -1,13 +1,11 @@
 from django.shortcuts import render, redirect
 from landing.models import comment
+
 # Create your views here.
 
 def main(request):
     recall = comment.objects.order_by("-id")[0:3]
-    context = {
-        "recall": recall
-    }
-    return render(request, "main.html",context)
+    return render(request, "main.html",{"recall":recall})
 
 
 def add_comments(request):

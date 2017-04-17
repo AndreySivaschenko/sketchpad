@@ -1,0 +1,48 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Профиль</title>
+	<link rel="stylesheet" type="text/css" href="{% static "sketch/style/style-note.css"%}">
+	<link rel="stylesheet" type="text/css" href="{% static "sketch/style/bootstrap.min.css"%}">
+    <link rel="shortcut icon" type="text/gif" href="{% static "sketch/img/icon.ico" %}">
+</head>
+<body>
+	<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" id="profileBody">
+                {% block content %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                         <div class="col-md-4">
+                             <div class="profileForm">
+                                 <div class="profileTitle">
+                                     <h3>Профиль</h3>
+                                 </div>
+                                 <div class="profileImage">
+                                     <img src="{{ user.userprofile.avatar.url }}">
+                                     <h3>{{ user}}</h3>
+                                 </div>
+                                 <div class="profileBody">
+                                         <h3>Имя: <b>{{ user.first_name }}</b></h3>
+                                         <h3>Фамилия: <b>{{ user.last_name }}</b></h3>
+                                         <h3>Дата рождения: <b>{{ user.userprofile.dateBirth}}</b> </h3>
+                                         <h3>Email: <b>{{ user.email }}</b></h3>
+                                         <h3>Моб.телефон: <b>+{{ user.userprofile.phone }}</b></h3>
+                                        <a href="{% url 'profile/edit' %}"><img src="{% static "profile/img/edit.png" %}"></a>
+                                 </div>
+                             </div>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+{% endblock %}
+            </div>
+        </div>
+	</div>
+	<script src="{% static "sketch/js/bootstrap.min.js"%}"></script>
+</body>
+</html>

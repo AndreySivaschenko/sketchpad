@@ -22,12 +22,15 @@
 		</div>
 		<div class="col-sm-4 col-md-4 auth">
 			<ul>
-                {% if username %}
-                     <li><a href="/auth/logout/">Выйти ({{ username }})</a></li>
+               {% if user.is_authenticated %}
+                   <a href="{% url 'profile' %}"> <img src="{{ user.userprofile.avatar.url }}" class="avatar">
+                   <h3>Вы вошли как: {{ user.username }}</h3></a>
+                   <li><a href="{% url 'auth_logout' %}">Выход</a></li>
+                   <li><a href="{% url 'auth_password_change' %}">Сбосить пароль</a></li>
                 {% else %}
-				    <li><a href="/auth/login/">Login | </a></li>
+                   <li><a class="link_login" id="links_login" href="{% url 'auth_login' %}">Войти |</a></li>
+                    <li><a class="link_login" id="links_login" href="{% url 'registration_register' %}">Регистрация</a></li>
                 {% endif %}
-				<li><a href="/auth/register/">Registration</a></li>
 			</ul>
 		</div>
 	</div>

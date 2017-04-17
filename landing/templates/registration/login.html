@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method="post" action=".">
+  {% csrf_token %}
+    {{ form | crispy }}
+    <div class="Help_user">
+    <p> Забыл пароль? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
+    <p> Нет аккаунта? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+</div>
+    <div class="form-group">
+        <div class="login_btn">
+          <input type="submit" class="btn btn-default" id="auth-btn" value="Войти">
+        </div>
+      </div>
+</form>
+
+{% endblock %}

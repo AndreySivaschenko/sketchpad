@@ -50,16 +50,6 @@ body{
 	background: #d5d5d5;
 }
 
-.avatars a{
-	display: block;
-	width: 50px;
-	height: 50px;
-	border-radius: 50% 50%;
-	background: #c1c1c1;
-	margin-top: 30px;
-	margin-bottom: 25px;
-}
-
 .main-menu-hide a,
 .settings-menu a{
 	display: block;
@@ -145,36 +135,45 @@ body{
 	padding-left: 15px;
 }
 
-.s-search input[type="submit"] {
-	position: absolute;
-	top:-6px;
-	left: 335px;
-	width: 35px;
-	height:35px;
-	cursor: pointer;
-	border: none;
-	background: url(../img/search-icon.png)no-repeat center;
-}
-
-.s-search input[type="text"] {
-	display: block;
-	float: right;
-	width:250px;
-	height:25px;
-	padding: 0 40px 0 35px;
-	border: 1px solid #e7e7e7;
+.search{
+	width: 240px;
+	height: 25px;
+	margin-top: 10px;
 	background: #fff;
+	float: right;
 	color: #9699a2;
-	font-size: 16px;
-	outline: none;
-	font-family: 'Roboto Light', arial;
-	font-weight: normal;
+	border: 1px solid #e7e7e7;
 	border-radius: 10px 10px;
 	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.06);
 	   -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.06);
 		 -o-box-shadow: 0px 1px 2px rgba(0,0,0,0.06);
 		-ms-box-shadow: 0px 1px 2px rgba(0,0,0,0.06);
 		    box-shadow: 0px 1px 2px rgba(0,0,0,0.06);
+}
+
+.search input[type="submit"] {
+	width: 30px;
+	height:25px;
+	cursor: pointer;
+	border: none;
+	margin-left: 5px;
+	margin-top: -1px;
+	background: url(../img/search-icon.png)no-repeat center;
+}
+
+.search input[type="text"] {
+	width: 190px;
+	height: 24px;
+	float: right;
+	margin-right: 10px;
+	border: none;
+	outline: none;
+	-webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+	background: #fff;
+	font-size: 16px;
+	font-family: 'Roboto Light', arial;
+	font-weight: normal;
+    vertical-align: middle;
 }
 
 
@@ -492,7 +491,7 @@ body{
 .addForm h4{
 	font-weight: normal;
 	margin-bottom: 5px;
-	font-family: 'Roboto Bold', aria
+	font-family: 'Roboto Bold', arial;
 }
 .centerButton{
 	text-align: right;
@@ -501,4 +500,136 @@ body{
 
 .note_desc{
 	resize: none;
+}
+
+.avatar img{
+	width: 35%;
+	height: 100px;
+	border: 2px solid #828ba3;
+	border-radius: 60%;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+	object-fit: cover;
+}
+
+#small-avatar img{
+	display: block;
+	width: 55px;
+	height: 55px;
+	border-radius: 50% 50%;
+	margin-top: 30px;
+	margin-bottom: 25px;
+	border:none;
+}
+
+.profile_ava img{
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+}
+
+#profileBody{
+	height:100vh;
+	background:url(../img/profilebg.png) top center no-repeat;
+	background-size: cover;
+	color:#fff;
+}
+.profileForm{
+	width: 100%;
+	height: 100%;
+	padding: 20px 35px;
+	text-align: center;
+	margin-top: 20%;
+	background: rgba(255,255,255,0.1);
+	border-radius: 20px 20px;
+}
+
+.profileImage{
+	text-align: center;
+}
+
+.profileImage img{
+	width: 55%;
+	height: 160px;
+	margin-top: 10px;
+	border-radius: 50% 50%;
+	text-align: center;
+	object-fit: cover;
+}
+
+.profileImage h3{
+	margin-top: 5px;
+	margin-bottom: 10px;
+	color:#fff;
+	font-size: 16px;
+	font-weight: normal;
+	font-family: 'Roboto Bold', arial;
+}
+
+.profileTitle{
+	width: 100%;
+}
+
+.profileTitle h3{
+	color:#fff;
+	font-size: 24px;
+	font-weight: normal;
+	font-family: 'Roboto Bold', arial;
+}
+
+
+.profileBody {
+	z-index: 9999;
+}
+
+.profileBody h3{
+	font-size: 14px;
+	font-weight: normal;
+	font-family: 'Roboto Bold', arial;
+	margin-bottom: 10px;
+}
+
+.profileBody h3 b {
+	font-family: 'Roboto Light', arial;
+	font-weight: normal;
+}
+.profileBody img{
+	width: 45px;
+	height: 45px;
+	opacity:0.5;
+	transition: 0.5s;
+}
+.profileBody img:hover{
+	transition: 0.9s;
+	opacity: 1;
+}
+#profileEdit{
+	margin-top: 10%;
+	padding: 10px 15px;
+	background: rgba(255,255,255,0.2);
+	border-radius: 10px 10px;
+}
+
+#profileEdit h2{
+	margin-bottom: 10px;
+	text-align: center;
+
+}
+
+#profileEdit a {
+	color:#fff;
+}
+.profileBtn{
+	display: block;
+	margin:0 auto;
+	margin-top: 20px;
+	width: 120px;
+	height: 40px;
+	background: #122e53;
+	border: 2px solid #628df0;
+	font-family: 'Roboto Bold', arial;
+	padding-top: 3px;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 4px 4px;
+	color:#e1e1e1;
 }
