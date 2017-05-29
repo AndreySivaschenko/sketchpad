@@ -177,6 +177,7 @@ section#donat{
 	height: 70vh;
 	background: #e1e1e1;
 	text-align: center;
+	display: none;
 }
 
 .donat-btn{
@@ -265,7 +266,7 @@ section#reviews{
 	background: #24365e;
 	border: 1px solid #1d2c4d;
 	font-family: 'Roboto Bold', arial;
-	padding-top:6px;
+	padding-top:8px;
 	font-size: 14px;
 	cursor: pointer;
 	border-radius: 8px 8px;
@@ -472,4 +473,11 @@ section#reviews{
 
 .registrationForm{
 	padding-bottom: 30px;
+}
+
+.copy{
+	color:#fff;
+	margin-top: 150px;
+	font-family: 'Roboto Medium', arial;
+	font-size: 14px;
 }

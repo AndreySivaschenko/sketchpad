@@ -12,4 +12,5 @@ urlpatterns =[
     url(r'^delete/(?P<id>\d+)$', views.destroy),
     url(r'^profile/$', views.view_profile,name='profile'),
     url(r'^profile/edit/$', views.edit_profile,name='profile/edit'),
+    url(r'^check_event/$', views.check_event,name='check_event'),
 ]

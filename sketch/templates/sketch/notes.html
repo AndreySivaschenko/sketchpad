@@ -4,25 +4,53 @@
 
 
 {% block content %}
-	<div class="col-md-11" id="date">
+    <div id="wrapper ">
+        <div class="col-md-11 col-md-offset-1 " id="date">
 					<div class="row-fluid">
                         {% for note in date %}
                          <div class="col-md-5 date-row">
-                             <h4>{{ date|index:forloop.counter0 }}</h4>
+                             <h4 id="date_check">{{ date|index:forloop.counter0 }}</h4>
                          </div>
                      {% endfor %}
                         <a href="#" id="ar-prev"><img src="{% static "sketch/img/arrow-prev.png" %}" class="arrow-prev" alt="arrow-prev"></a>
                         <a href="#" id="ar-next"><img src="{% static "sketch/img/arrow-next.png" %}" class="arrow-next" alt="arrow-next"></a>
 					</div>
 				</div>
-					<div class="col-md-11" id="body">
-						<div class="row">
+					<div class="col-md-11 col-md-offset-1" id="notes_body">
+						<div class="row" id="scroll">
+                          <div id="msg_pop">
+                              <div class="msg">
+                                  <div id="holiday_title">
+                                      <img src="{% static "sketch/img/alert_icon.png" %}" id="alert_icon">
+                                      <h3>Напоминание</h3>
+                                      <img src="{% static  "sketch/img/alert_close.png" %}" id="msg_event_close" class="msg_close" onclick="document.getElementById('msg_pop').style.display='none'; return false;" />
+                                  </div>
+                                  <div id="event_body">
+                                        <h4>Cегодня : {{ holiday }}</h4>
+                                        <h5>{{ holiday.holidays_description}}</h5>
+                                   </div>
+                              </div>
+                          </div>
+                        <div id="event_pop">
+                           <div id="event_title">
+                               <img src="{% static "sketch/img/alert_icon.png" %}" id="alert_icon">
+                               <h3>Оповещание</h3>
+                               <img src="{% static  "sketch/img/alert_close.png" %}" id="msg_event_close" class="msg_close" onclick="document.getElementById('event_pop').style.display='none'; return false;">
+                           </div>
+
+                            <div id="event_body">
+                                    <h3>Название: {{ dayCheck.notes_title }}</h3>
+                                    <h3>Описание: {{ dayCheck.notes_description }}</h3>
+                                    <h3>Когда: {{ dayCheck.notes_date|date:"Y-m-d"}} в {{ dayCheck.notes_time|date:"H:i" }}</h3>
+                            </div>
+                        </div>
+
                             <div class="col-md-5 note-row" id="notes_1">
                             {% for note in notes_1%}
                              <div class="note">
                                     <div class="n-title clearfix">
                                         <h4>Время</h4>
-                                        <h5>{{ note.notes_time|date:"H:i"  }}</h5>
+                                        <h5 id="dateAlert">{{ note.notes_time|date:"H:i"  }}</h5>
                                     </div>
                                     <div class="n-body">
                                         <input type="text" id="prior" value="{{ note.notes_priority }}" />
@@ -55,7 +83,7 @@
                              <div class="note">
                                     <div class="n-title clearfix">
                                         <h4>Время</h4>
-                                        <h5>{{ note.notes_time|date:"H:i"  }}</h5>
+                                        <h5 id="dateAlert">{{ note.notes_time|date:"H:i"  }}</h5>
                                     </div>
                                     <div class="n-body">
                                         <input type="text" id="prior" value="{{ note.notes_priority }}" />
@@ -249,4 +277,5 @@
                             </div>
                         </div>
 					</div>
+    </div>
 {% endblock %}

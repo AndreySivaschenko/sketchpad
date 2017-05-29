@@ -1,3 +1,5 @@
+from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin, UserManager
 from django.db import models
 # Create your models here.
 from django.utils import timezone
@@ -17,3 +19,7 @@ class comment(models.Model):
 
     def __unicode__(self):
         return str(self.comment_recall)
+
+
+
+

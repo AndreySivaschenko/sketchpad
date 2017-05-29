@@ -1,9 +1,11 @@
 from datetime import datetime
 
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, UserManager
 from django.db import models
 
 # Create your models here.
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
+
 
 
 class UserProfile(models.Model):
@@ -23,3 +25,5 @@ class UserProfile(models.Model):
         return self.user.username
 
 User.profile = property(lambda u:UserProfile.objects.get_or_create(user=u)[0])
+
+

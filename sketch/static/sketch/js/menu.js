@@ -57,13 +57,8 @@ function sellectArrow() {
 	var	date = document.getElementsByClassName("date-row");
 	var note_1 = document.getElementById('notes_1');
 	var note_2 = document.getElementById('notes_2');
-	var note_4 = document.getElementById('notes_4');
-	var note_5 = document.getElementById('notes_5');
 	var note_6 = document.getElementById('notes_6');
 	var note_7 = document.getElementById('notes_7');
-
-
-
 
 	arrowPrew.style.display = 'none';
 
@@ -143,11 +138,44 @@ function optionNote(){
 
 }
 
+function check_event() {
+  	Data = new Date();
+  	Year = Data.getFullYear();
+	Month = Data.getMonth()+1;
+	Day = Data.getDate();
+	Hour = Data.getHours();
+	Minutes = Data.getMinutes();
+  	if (Day < 10) Day = '0' + Day;
+	if (Month < 10) Month = '0' + Month;
+	var time = Hour + ":" + Minutes;
+	var date = Year + "-" + Month + "-" + Day;
+	$.ajax({
+   	url: "/user/check_event/",
+	   method:"GET",
+	   data:{
+		    'notes_time': time,
+		   	'notes_date':date
+	   },
+	   cache:false,
+	   dataType:"text",
+	   success : function (data) {
+		   if(data == 'yes'){
+
+		   	var event_pop = document.getElementById('event_pop');
+        	setTimeout("document.getElementById('event_pop').style.display='block'; document.getElementById('event_pop').className += 'fadeIn';audio.play();");
+
+		   }
+       }
+   });
+}
+
 window.onload = function(){
 	openMenu();
 	priority();
 	hideDateNav();
 	sellectArrow();
 	optionNote();
-
+	check_event();
+	scroll();
+	setInterval(check_event,60000);
 };

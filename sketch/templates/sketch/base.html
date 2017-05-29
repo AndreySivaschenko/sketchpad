@@ -9,13 +9,16 @@
 	<link rel="stylesheet" type="text/css" href="{% static "sketch/style/bootstrap.min.css"%}">
 	<link rel="stylesheet" type="text/css" href="{% static "sketch/style/col-md-5.css"%}">
     <link rel="shortcut icon" type="text/gif" href="{% static "sketch/img/icon.ico" %}">
+
+
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid main">
 	<div id="mask"></div>
-		<div class="leftNav">
+		<div id="leftNav">
 			<div class="row">
-				<div class="col-md-1" id="mainMenu">
+                <div id="fixed-block">
+                    <div class="col-md-1" id="mainMenu">
 					<div class="avatar" id="small-avatar">
 						<a href="{% url "profile" %}"><img src='{{ user.userprofile.avatar.url }}'></a>
 					</div>
@@ -55,13 +58,27 @@
 							<li>
 								<span class="img-menu" id="icon5">&nbsp;</span>
 								<a href="#" id="sort-btn">Сортировка</a>
-							</li>
+                                <label class="checkbox">
+                                  <input type="checkbox" id="inlineCheckbox1" name="inlineCheckbox1" value="0"> Обычный
+                                </label>
+                                <label class="checkbox">
+                                  <input type="checkbox" id="inlineCheckbox2" name="inlineCheckbox2" value="1"> Cредний
+                                </label>
+                                <label class="checkbox">
+                                  <input type="checkbox"  id="inlineCheckbox3" name="inlineCheckbox3" value="2"> Повышенный
+                                </label>
+
+                                <label class="checkbox">
+                                  <input type="checkbox"  id="inlineCheckbox4" name="inlineCheckbox4" value="3"> Высокий
+                                </label>
+                            </li>
 						</ul>
 					</div>
 				</div>
-				<div id="wp clearfix">
-					<div class="col-md-11" id="navTop">
+            </div>
 
+				<div id="wp clearfix">
+					<div class="col-md-11  col-md-offset-1" id="navTop">
 					<div class="row-fluid">
 						<div class="col-md-6" id="nt-logo clearfix">
 							<div class="logo">
@@ -91,10 +108,23 @@
 			</div>
 		</div>
 	</div>
+    <audio id=audio src="{% static 'sketch/audio/sounds1.mp3' %}"></audio>
+
 	<script type="text/javascript">
 
-	</script>
-	<script src="{% static "sketch/js/menu.js" %}"></script>
+
+
+    </script>
+
+	<script src="{% static "sketch/js/sort.js" %}"></script>
+    <script src="{% static "sketch/js/menu.js" %}"></script>
 	<script src="{% static "sketch/js/bootstrap.min.js"%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{% static "sketch/js/jquery.cookie.js" %}"></script>
+    <script src="{% static 'sketch/js/holiday_popup.js' %}"></script>
+    <script src="{% static 'sketch/js/jquery.nicescroll.js' %}"></script>
+    <script src="{% static 'sketch/js/scroll.js' %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>

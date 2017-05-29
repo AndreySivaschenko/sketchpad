@@ -19,16 +19,20 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from registration.forms import RegistrationFormUniqueEmail
 from registration.backends.default.views import RegistrationView
-
+from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
     url(r'^admin/', include (admin.site.urls)),
-    url(r'^auth/', include('loginsys.urls')),
     url(r'^', include('landing.urls')),
     url('^user/', include('sketch.urls')),
+    url(r'^api/v1.0/account/token/', obtain_jwt_token),
+    url('^api/v1.0/account/', include('landing.api.v1_0.urls')),
+    url('^api/v1.0/user/', include('sketch.api.v1_0.urls')),
     url(r'^accounts/register/$',RegistrationView.as_view(form_class=RegistrationFormUniqueEmail),
         name='registration_register'),
     url(r'^accounts/', include('registration.backends.default.urls')),
+    url('', include('social_django.urls', namespace='social')),
+url(r'', include('django.contrib.auth.urls', namespace='auth')),
 ]
 
 
